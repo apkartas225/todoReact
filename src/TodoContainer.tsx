@@ -12,12 +12,10 @@ type Props = {
 }
 
 export const TodoContainer: FC<Props> = observer(({ children }) => {
-    // let [ todos, setTodos ]:any = useState([]);
     const [ value, setValue ] = useState('');
     const addTodo = () => {
         if (!value) { return; }
         TodoStore.add( {body: value, id: Math.random(), checked: false} )
-        // setTodos( [...todos, {body: value, id: Math.random(), checked: false} ] );
         setValue('');
     };
 
