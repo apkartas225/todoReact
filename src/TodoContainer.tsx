@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState } from 'react';
 import { Todos } from './Todos';
 import { ITodo } from '../src/TodoContainer/Interface';
 import { observer } from "mobx-react-lite";
@@ -23,19 +23,8 @@ export const TodoContainer: FC<Props> = observer(({ children }) => {
 
     const selectTodo = ( id: number, checked: boolean ) => {
       TodoStore.selectTodo( id, checked )
-        // todos = todos.map( (el: ITodo) => {
-        //     if (el.id === id) {
-        //         el.checked = checked;
-        //         return el;
-        //     }
-        //     return el;
-        // })
-        // setTodos([...todos])
-        
     };
-    // const removeTodo = (id: number) => {
-    //     setTodos( todos.filter((el: ITodo) => el.id !== id) );
-    // }
+   
     return (
        <div className="container">
             <h1>{children}</h1>
